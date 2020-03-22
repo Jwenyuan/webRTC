@@ -1,0 +1,11 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.app-page {
+    text-align: center;
+} 
+.video-content {
+    width: 100vw;
+    height: auto;
+}
