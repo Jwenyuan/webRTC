@@ -5,8 +5,10 @@ export default class App extends React.Component {
     
     componentDidMount() {
         navigator.mediaDevices.getUserMedia({
-            video: true,
-            // audio: true
+            video: {
+                facingMode: 'envirent' // 给个后置呗
+            },
+            audio: true,
         })
             .then(this.gotLocalMediaStream)
             .catch(this.handleLocalMediaStreamError);
@@ -18,7 +20,7 @@ export default class App extends React.Component {
      * @param   {Object}    mediaStream     音视频轨
      */
     gotLocalMediaStream = (mediaStream) => {
-        console.log(mediaStream);
+        console.log('mediaStream', mediaStream);
         this.videoRef.srcObject = mediaStream;
     }
     handleLocalMediaStreamError = (error) => {
